@@ -2,6 +2,7 @@ import { faker } from "@faker-js/faker";
 import { IMailer } from "../interfaces/IMailer";
 import { ILogger } from "../interfaces/ILogger";
 import { IReportService } from "../interfaces/IReportService";
+import { InvalidReportSizeError } from "../errors/InvalidReportSizeError";
 
 import { injectable, inject } from "inversify";
 import { TYPES } from "../../container/types";
@@ -20,8 +21,8 @@ export class ReportService implements IReportService{
         this.logger.info("Iniciando geração do relatório");
 
         //Verificar se n não é maior que 10, e se é inteiro
-        if(!Number.isInteger(n) || n < 1 || n > 10){
-            throw new Error("[ERROR]InvalidReportSizeError");
+        if (n < 0 || n > 10) {
+            throw new InvalidReportSizeError();
         }
 
         const records: Array<{ nome: string; cidade: string }> = [];

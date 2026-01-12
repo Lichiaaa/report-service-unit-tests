@@ -1,10 +1,10 @@
 {
   "name": "trabalho_6",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este repositório corresponde à continuação do trabalho anterior T6, com foco na implementação de testes unitários para validação do DIP.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,8 @@
     "@types/node": "^25.0.3",
     "@types/nodemailer": "^7.0.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
   },
   "dependencies": {
     "@faker-js/faker": "^10.2.0",
@@ -24,5 +25,13 @@
     "nodemailer": "^7.0.12",
     "reflect-metadata": "^0.2.2",
     "winston": "^3.19.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lichiaaa/report-service-unit-tests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lichiaaa/report-service-unit-tests/issues"
+  },
+  "homepage": "https://github.com/Lichiaaa/report-service-unit-tests#readme"
 }

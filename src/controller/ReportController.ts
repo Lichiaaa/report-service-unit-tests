@@ -1,3 +1,4 @@
+import { InvalidReportSizeError } from "../domain/errors/InvalidReportSizeError";
 import type { Request, Response } from "express";
 import type { Container } from "inversify";
 import { TYPES } from "../container/types";
@@ -27,8 +28,8 @@ export class ReportController {
 
             return res.status(200).json({ message: "Relatório enviado com sucesso" });
         } catch (err: any) {
-            if (err?.message === "InvalidReportSizeError") {
-                return res.status(400).json({ error: "Invalid n (must be integer between 1 and 10)" });
+            if (err?.name === "InvalidReportSizeError") {
+                return res.status(400).json({ error: err.message });
             }
 
             return res.status(500).json({ error: "Internal server error" });
